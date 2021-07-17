@@ -1,6 +1,11 @@
+@charset "UTF-8";
 * {
-  /* border: solid 1px black; */
   position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  font-family: "微軟正黑體";
 }
 
 html, body {
@@ -10,42 +15,147 @@ html, body {
 
 .title {
   display: flex;
-  /* position: absolute; */
-  width: 100%;
-  height: 150px;
-  background-color: #e861a2;
-  font-size: 100px;
+  height: 60px;
+  background-color: #FFAAA7;
   align-items: center;
-  padding-left: 40px;
+}
+
+.titleName {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 36px;
+}
+
+.setting {
+  position: absolute;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.ret1, .ret2, .ret3 {
+  height: 6px;
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 100px;
+  transition-duration: 0.2s;
+  background-color: #FFD3B4;
+}
+
+.ret1 {
+  transform: translateY(-250%);
+}
+
+.ret3 {
+  transform: translateY(150%);
+}
+
+.setTrans .ret2 {
+  width: 0px;
+  height: 0px;
+}
+.setTrans .ret1 {
+  transform: translateY(-50%) rotate(45deg) scaleX(1.2);
+}
+.setTrans .ret3 {
+  transform: translateY(-50%) rotate(-45deg) scaleX(1.2);
 }
 
 .container {
-  left: 20px;
-  /* padding: 10px; */
-  /* width: 100%; */
-  /* position: absolute;
-  top: 150px; */
+  padding: 10px;
   display: grid;
   justify-content: space-between;
-  grid-template-columns: repeat(auto-fill, 400px);
-  grid-gap: 20px;
-  padding: 30px;
-  /* margin: 0; */
+  grid-template-columns: repeat(auto-fill, 150px);
+  grid-gap: 10px;
+  background-color: #F8E3E3;
 }
 
 .list {
-  width: 400px;
-  height: 400px;
-  background-color: rgb(192, 190, 190);
-  /* margin-top: 5px; */
-  /* padding: 50px */
+  width: 150px;
+  height: 150px;
+  background-color: skyblue;
+  margin-top: 5px;
 }
 
 .gameTitle {
   position: absolute;
-  width: 100%;
   bottom: 0px;
-  font-size: 60px;
-  background-color: #FFD3B4;
+}
+
+.gameBlock {
+  position: absolute;
+  top: 10px;
+  background-color: #FFFEFE;
+  opacity: 95%;
+  width: 95%;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.settingBlock {
+  position: absolute;
+  top: 0px;
+  background-color: #7D7C7C;
+  opacity: 95%;
+  width: 100%;
+  height: 100%;
+}
+
+.settingOption {
+  display: block;
+  width: 250px;
+  height: 60px;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  transition-duration: 0.5s;
+}
+
+.option1 {
+  top: 15%;
+}
+
+.option2 {
+  top: 20%;
+}
+
+.option3 {
+  top: 25%;
+}
+
+.name {
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  font-size: 43px;
   text-align: center;
+  color: white;
+}
+
+.settingButton {
+  position: absolute;
+  right: 0px;
+  width: 120px;
+  height: 100%;
+  background-color: #FFD3B4;
+  border-radius: 40px;
+  transition-duration: 0.5s;
+}
+
+.switch {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #FFAAA7;
+  transition-duration: 0.5s;
+  cursor: pointer;
 }
