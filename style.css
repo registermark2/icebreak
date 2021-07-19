@@ -308,6 +308,7 @@ html, body {
 .bt{
   width: 650px;
   /* height: 150px; */
+  top: 40px;
   margin: 40px;
   left: 50%;
   transform: translateX(-50%);
