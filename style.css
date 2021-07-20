@@ -305,6 +305,7 @@ html, body {
   background-color: #7D7C7C;
   opacity: 90%;
   transition-duration: 0.5s;
+  display: none;
 }
 
 .bt{

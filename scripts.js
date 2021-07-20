@@ -19,7 +19,6 @@ $(".btContent1").click(function(){
         $(".btContent1").addClass("btContentOpen");
         $(".btCircle1").addClass("btCircleOpen");
         $(".btStatus1").addClass("btStatusOpen");
-        // $("btStatus1").text("");
         $(".btStatus1").text("開");
         bt1=1;
     } else {
@@ -29,7 +28,6 @@ $(".btContent1").click(function(){
         $(".btContent1").addClass("btContentClose");
         $(".btCircle1").addClass("btCircleClose");
         $(".btStatus1").addClass("btStatusClose");
-        // $("btStatus1").text("");
         $(".btStatus1").text("關");
         bt1=0;
     }
@@ -44,7 +42,6 @@ $(".btContent2").click(function(){
         $(".btContent2").addClass("btContentOpen");
         $(".btCircle2").addClass("btCircleOpen");
         $(".btStatus2").addClass("btStatusOpen");
-        // $("btStatus1").text("");
         $(".btStatus2").text("開");
         bt2=1;
     } else {
@@ -54,7 +51,6 @@ $(".btContent2").click(function(){
         $(".btContent2").addClass("btContentClose");
         $(".btCircle2").addClass("btCircleClose");
         $(".btStatus2").addClass("btStatusClose");
-        // $("btStatus1").text("");
         $(".btStatus2").text("關");
         bt2=0;
     }
