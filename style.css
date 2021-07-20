@@ -330,8 +330,16 @@ html, body {
   top: 0px;
   border-radius: 100px;
   /* color: #353535; */
+  /* background-color: #FFD3B4; */
+}
+.btContentClose{
   background-color: #FFD3B4;
 }
+.btContentOpen{
+  background-color: #D5ECC2;
+}
+
+
 
 .btCircle{
   width: 100px;
@@ -339,17 +347,38 @@ html, body {
   border-radius: 100px;
   top: 50%;
   transform: translateY(-50%);
+  /* left: 20px; */
+  /* background-color: #FFAAA7; */
+}
+.btCircleClose{
   left: 20px;
   background-color: #FFAAA7;
+}
+.btCircleOpen{
+  position: absolute;
+  right: 20px;
+  background-color: #98DDCA;
 }
 
 .btStatus{
   width: 140px;
   height: 100%;
-  position: absolute;
-  top: 0px;
-  right: 10px;
+  /* position: absolute; */
+  /* top: 0px; */
+  /* right: 10px; */
   font-size: 80px;
   text-align: center;
   color: #5B5B5B;
+}
+
+.btStatusClose{
+  position: absolute; 
+  top: 0px;
+  right: 10px;
+}
+
+.btStatusOpen{
+  position: absolute; 
+  top: 0px;
+  left: 10px;
 }
