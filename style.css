@@ -3,6 +3,7 @@
   position: relative;
   font-family: 'cwTeXYen', sans-serif;
   -webkit-user-select: none; 
+  user-select: none;
 }
 
 html, body {
