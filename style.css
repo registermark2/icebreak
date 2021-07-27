@@ -88,11 +88,11 @@ html, body {
   width: 300px;
   height: 80px;
   position: absolute;
-  left: 320px;
+  left: 345px;
   top: 40px;
   /* background-color: rgb(109, 196, 80); */
   font-size: 50px;
-  text-align: center;
+  text-align: left;
   color: rgb(145, 145, 145);
 }
 

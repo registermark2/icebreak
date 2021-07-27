@@ -1,5 +1,4 @@
-
-var optionStatus = 0
+var optionStatus = 0;
 $(document).ready(function () {
     $(".option").click(function () {
         if (optionStatus == 0) {
@@ -15,10 +14,10 @@ $(document).ready(function () {
             $(".optionContent").css("display", "none");
             optionStatus = 0;
         }
-    })
+    });
 });
 
-var bt1 = 0
+var bt1 = 0;
 $(".btContent1").click(function () {
     if (bt1 == 0) {
         $(".btContent1").removeClass("btContentClose");
@@ -41,7 +40,7 @@ $(".btContent1").click(function () {
     }
 });
 
-var bt2 = 0
+var bt2 = 0;
 $(".btContent2").click(function () {
     if (bt2 == 0) {
         $(".btContent2").removeClass("btContentClose");
@@ -65,34 +64,25 @@ $(".btContent2").click(function () {
 });
 
 
-// $.getJSON("./transferExcelToJson/ice_break_format.json", function (result) {
-    // console.log(result);
+var list_html =
+    "<div class='list {{listNum}}'><div class='listPic {{listPicNum}}'><img class='listPic {{listPicNum}}' src='{{linkPic}}'></div><div class='listName {{listNameNum}}'>{{gameName}}</div><div class='listContent {{listContentNum}}'>{{gamePurpose}}</div></div>";
 
-    // for(var i=0;i>9;i++){
-    //     $(".listName1").text(result[i].name);
-    //     console.log(result[i].name);
-    // }
-    // var array = ['小明', '杰倫', '漂亮阿姨', '小美']
-    // for (var i = 0; i < result.length; i++) {
-        // $(".listName1").text(result[0].name);
-        // $(".listContent1").text(result[0].purpose);
-    // }
-// });
-
-var list_html="<div class='list {{listNum}}'><div class='listPic {{listPicNum}}'><img class='listPic {{listPicNum}}' src='{{linkPic}}'></div><div class='listName {{listNameNum}}'>人名收集員</div><div class='listContent {{listContentNum}}'>營造輕鬆的小組氣氛</div></div>";
-
-var linkPic=[
+$.getJSON("./transferExcelToJson/ice_break_format.json", function (data) {
     
-]
-
-// 選取 DOM：欲插入 a 連結的 DOM 名為 .list
-for (var i=1;i<10;i++){
-    //取代模板位置成資料replace(要取代的,取代成...)
-    var current_item_html=
-        list_html.replace("{{listNum}}","list"+i)
-                 .replace("{{listPicNum}}","listPic"+i)
-                 .replace("{{listNameNum}}","listName"+i)
-                 .replace("{{listContentNum}}","listContent"+i);
-
-    $(".content").append(current_item_html);
-};
+    console.log(data);
+    
+    for (var i = 0; i < data.length; i++) {
+        //取代模板位置成資料replace(要取代的,取代成...)
+        var current_item_html = list_html
+            .replace("{{listNum}}", "list" + i+1)
+            .replace("{{listPicNum}}", "listPic" + i+1)
+            .replace("{{listNameNum}}", "listName" + i+1)
+            .replace("{{listPicNum}}", "listPic" + i+1)
+            .replace("{{listContentNum}}", "listContent" + i+1)
+            .replace("{{gameName}}", data[i].name)
+            .replace("{{gamePurpose}}", data[i].purpose)
+            .replace("{{linkPic}}", "./images/"+data[i].imageName+".jpeg");
+            
+        $(".content").append(current_item_html);
+    }
+});
