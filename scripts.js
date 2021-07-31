@@ -65,7 +65,7 @@ $(".btContent2").click(function () {
 
 
 var list_html =
-  "<div  id={{gameID}} class='list {{listNum}} '><div class='listPic {{listPicNum}}'><img class='listPic {{listPicNum}}' src='{{linkPic}}'></div><div class='listName {{listNameNum}}'>{{gameName}}</div><div class='listContent {{listContentNum}}'>{{gamePurpose}}</div></div>";
+  "<div  id={{gameID}} class='list {{listNum}}' onclick='show_game_detail(this)' '><div class='listPic {{listPicNum}}'><img class='listPic {{listPicNum}}' src='{{linkPic}}'></div><div class='listName {{listNameNum}}'>{{gameName}}</div><div class='listContent {{listContentNum}}'>{{gamePurpose}}</div></div>";
 
 var apiData;
 
@@ -85,15 +85,17 @@ $.getJSON("./transferExcelToJson/ice_break_format.json", function (data) {
       .replace("{{gameName}}", data[i].name)
       .replace("{{gamePurpose}}", data[i].purpose)
       .replace("{{linkPic}}", "./images/" + data[i].imageName + ".jpeg")
-      .replace("{{gameID}}", "game" + i);
+      .replace("{{gameID}}", i);
 
     $(".content").append(current_item_html);
 
 
-    $("#game" + i).click(
-      function () {
-        show_game_detail();
-      });
+    // $("#game" + i).click(
+    //   function (e) {
+    //     // console.log(e);
+    //     console.log("123");
+    //     show_game_detail();
+    //   });
 
   }
 });
@@ -101,71 +103,71 @@ $.getJSON("./transferExcelToJson/ice_break_format.json", function (data) {
 
 var contentDetailExist = 0;
 //show game content
-function show_game_detail(id) {
+function show_game_detail(obj) {
   // var gameContent ="<div class='contentDetail'></div>";
 
   // show_game_detail();
-
+  console.log("物件: "+obj.id);
   var gameContent =
     "<div id='del_content' class='contentDetail'>" +
     "<div class='contentTitle'>" +
-    "<div class='contentTitleDetail'>放大圖片猜猜猜</div>" +
+    "<div class='contentTitleDetail'>{{contentTitleDetail}}</div>" +
     "</div>" +
     "<div class='contentPurpose'>" +
     "<div class='contentPurposeTitle'>目的</div>" +
-    "<div class='contentPurposeDetail'>互相討論，合作解難</div>" +
+    "<div class='contentPurposeDetail'>{{contentPurposeDetail}}</div>" +
     "</div>" +
     "<div class='contentNumber'>" +
     "<div class='contentNumberTitle'>人數</div>" +
-    "<div class='contentNumberDetail'>2-5</div>" +
+    "<div class='contentNumberDetail'>{{contentNumberDetail}}</div>" +
     "</div>" +
     "<div class='contentItem'>" +
     "<div class='contentItemTitle'>物資</div>" +
-    "<div class='contentItemDetail'>圖片</div>" +
+    "<div class='contentItemDetail'>{{contentItemDetail}}</div>" +
     "</div>" +
     "<div class='contentRules'>" +
     "<div class='contentRulesTitle'>玩法</div>" +
     "<div class='contentRulesDetail'>" +
-    "1. 將圖片的某一部份放大，然後讓參加者猜圖片中的物件是什麼。<p>2. 物件建議：筆、手機、垃圾桶、洗衣機、貓、巴士、機械人、IRON MAN、多啦A夢、地球" +
+    "{{contentRulesDetail}}" +
     "</div>" +
     "</div>" +
     "<div class='contentSuggest'>" +
     "<div class='contentSuggestTitle'>建議</div>" +
     "<div class='contentSuggestDetail'>" +
-    "可因應參加者的能力逐漸縮少圖片，以增加參加者猜中的機會。" +
+    "{{contentSuggestDetail}}" +
     "</div>" +
     "</div>" +
     "<div class='contentVideo'>" +
     //"<iframe class='contentVideoDetail' src='https://www.youtube.com/embed/XN031PuViqI?list=PL2SrkGHjnWcyWbA4MGSeTQVNiFHt1YbjC' frameborder='0' allowfullscreen></iframe>" +
     "</div>" +
-    "<div class='del_btn'>X</div>" +
+    "<div class='del_btn' onclick='myFunction()'>X</div>" +
     "</div>";
 
-  // $(window).scroll(function (e) {
-  //   console.log($(window).scrollTop());
-  //   topHeight = $(window).scrollTop();
-  //   // $(".contentDetail").css("top", topHeight+(-200));
-  // });
 
-  // console.log(window.pageYOffset);
-  console.log($(window).height());
+    var gameContentOutput = gameContent
+      .replace("{{contentTitleDetail}}", apiData[obj.id].name)
+      .replace("{{contentPurposeDetail}}", apiData[obj.id].purpose)
+      .replace("{{contentNumberDetail}}", apiData[obj.id].numbers)
+      .replace("{{contentItemDetail}}", apiData[obj.id].items)
+      .replace("{{contentRulesDetail}}", apiData[obj.id].rules)
+      .replace("{{contentSuggestDetail}}", "暫無");
 
-  $(".content").append(gameContent);
-  $('.contentDetail').css('height', ($(window).height())-160);
-  // $('.contentDetail').css('margin-buttom', 160);
+
+
+  $(".content").append(gameContentOutput);
+  $('.contentDetail').css('height', ($(window).height()) - 160);
+
 }
 
 
-$(".nav").click(function () {
+$('.nav').click(function () {
   // if (contentDetailExist == 1) {
-  $(".contentDetail").remove();
+  $('.contentDetail').remove();
   console.log("123");
   // }
 });
 
-$("#del_content").click(function () {
-  // if (contentDetailExist == 1) {
-  // $(".contentDetail").remove();
-  console.log("123");
-  // }
-});
+function myFunction(obj){
+
+  $(".contentDetail").remove();
+}

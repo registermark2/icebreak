@@ -120,20 +120,14 @@ html, body {
 
 .contentDetail{
   position: fixed;
-  /* width: 300px;
-  height: 300px; */
-  /* width: 95%; */
   height: 1200px;
   width: 100%;
   /* left: 50%;
   transform: translateX(-50%); */
   top: 160px;
-  z-index:1; 
-  /* border-radius: 20px; */
   background-color: #fff;
   overflow: scroll;
-  /* padding-bottom: 200px; */
-  z-index: 1;
+
 }
 
 /* .contentDetail{
@@ -161,8 +155,8 @@ html, body {
 }
 
 .contentPurpose{
-  margin-top: 20px;
-  height: 100px;
+  margin-top: 40px;
+  /* height: 100px; */
   width: 700px;
   left: 50%;
   transform: translateX(-50%);
@@ -179,14 +173,14 @@ html, body {
 }
 .contentPurposeDetail{
   height: 50px;
-  left: 10px;
+  left: 20px;
   display: inline-block;
   top: 25%;
 }
 
 .contentNumber{
-  margin-top: 20px;
-  height: 100px;
+  margin-top: 40px;
+  /* height: 100px; */
   width: 700px;
   left: 50%;
   transform: translateX(-50%);
@@ -205,7 +199,7 @@ html, body {
 
 .contentNumberDetail{
   height: 50px;
-  left: 10px;
+  left: 20px;
   display: inline-block;
   top: 25%;
 }
@@ -213,8 +207,8 @@ html, body {
 
 
 .contentItem{
-  margin-top: 20px;
-  height: 100px;
+  margin-top: 40px;
+  /* height: 100px; */
   width: 700px;
   left: 50%;
   transform: translateX(-50%);
@@ -232,10 +226,18 @@ html, body {
 }
 
 .contentItemDetail{
-  height: 50px;
-  left: 10px;
+  /* height: 50px;
+  left: 20px;
   display: inline-block;
   top: 25%;
+  word-wrap: break-word; */
+  /* position: absolute; */
+  width: 500px;
+  left: 160px;
+  top: -65px;
+  /* top: 50%;
+  transform: translateY(-50%); */
+  word-wrap:break-word; 
 }
 
 
@@ -267,7 +269,7 @@ html, body {
   left: 160px;
   /* display: inline-block; */
   word-wrap:break-word; 
-  top: -55px;
+  top: -65px;
 }
 
 
@@ -298,7 +300,7 @@ html, body {
   left: 160px;
   /* display: inline-block; */
   word-wrap:break-word; 
-  top: -55px;
+  top: -65px;
 }
 
 .contentVideoDetail{
