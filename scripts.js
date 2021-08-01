@@ -1,4 +1,23 @@
 var optionStatus = 0;
+
+var optionContent =
+  "<div class='optionContent'>" +
+  "<div class='bt'>" +
+  "<div  class='btTitle btTitle1' >合作</div>" +
+  "<div id='bt1' class='btContent btContent1 btContentClose' onclick='bt1Switch(this)'>" +
+  "<div class='btCircle btCircle1 btCircleClose'></div>" +
+  "<div class='btStatus btStatus1 btStatusClose'>關</div>" +
+  "</div>" +
+  "</div>" +
+  "<div class='bt'>" +
+  "<div class='btTitle btTitle2' >競爭</div>" +
+  "<div id='bt2' class='btContent btContent2 btContentClose' onclick='bt2Swirch(this)'>" +
+  "<div class='btCircle btCircle2 btCircleClose'></div>" +
+  "<div class='btStatus btStatus2 btStatusClose'>關</div>" +
+  "</div>" +
+  "</div>" +
+  "</div>"
+
 $(document).ready(function () {
   $(".option").click(function () {
     if (optionStatus == 0) {
@@ -6,19 +25,24 @@ $(document).ready(function () {
       // $(".optionContent").fadeIn("slow");
       // $(".optionContent").fadeIn(1000);
       $(".optionContent").css("display", "block");
+      // $(".content").append(optionContent);
       optionStatus = 1;
     } else {
       // $(".optionContent").fadeOut();
       // $(".optionContent").fadeOut("slow");
       // $(".optionContent").fadeOut(1000);
       $(".optionContent").css("display", "none");
+      // $(".optionContent").remove();
       optionStatus = 0;
     }
   });
 });
 
-var bt1 = 0;
-$(".btContent1").click(function () {
+
+// $(function () { if ($("#div").hasClass('on')) { $(this).css("display", "none"); } });
+
+var bt1 = 0, bt2 = 0;
+function bt1Switch(obj) {
   if (bt1 == 0) {
     $(".btContent1").removeClass("btContentClose");
     $(".btCircle1").removeClass("btCircleClose");
@@ -28,7 +52,7 @@ $(".btContent1").click(function () {
     $(".btStatus1").addClass("btStatusOpen");
     $(".btStatus1").text("開");
     bt1 = 1;
-  } else {
+  } else if (bt1 == 1) {
     $(".btContent1").removeClass("btContentOpen");
     $(".btCircle1").removeClass("btCircleOpen");
     $(".btStatus1").removeClass("btStatusOpen");
@@ -38,10 +62,9 @@ $(".btContent1").click(function () {
     $(".btStatus1").text("關");
     bt1 = 0;
   }
-});
+}
 
-var bt2 = 0;
-$(".btContent2").click(function () {
+function bt2Swirch() {
   if (bt2 == 0) {
     $(".btContent2").removeClass("btContentClose");
     $(".btCircle2").removeClass("btCircleClose");
@@ -51,7 +74,7 @@ $(".btContent2").click(function () {
     $(".btStatus2").addClass("btStatusOpen");
     $(".btStatus2").text("開");
     bt2 = 1;
-  } else {
+  } else if (bt2 == 1) {
     $(".btContent2").removeClass("btContentOpen");
     $(".btCircle2").removeClass("btCircleOpen");
     $(".btStatus2").removeClass("btStatusOpen");
@@ -61,7 +84,8 @@ $(".btContent2").click(function () {
     $(".btStatus2").text("關");
     bt2 = 0;
   }
-});
+}
+
 
 
 var list_html =
@@ -107,7 +131,7 @@ function show_game_detail(obj) {
   // var gameContent ="<div class='contentDetail'></div>";
 
   // show_game_detail();
-  console.log("物件: "+obj.id);
+  console.log("物件: " + obj.id);
   var gameContent =
     "<div id='del_content' class='contentDetail'>" +
     "<div class='contentTitle'>" +
@@ -144,13 +168,13 @@ function show_game_detail(obj) {
     "</div>";
 
 
-    var gameContentOutput = gameContent
-      .replace("{{contentTitleDetail}}", apiData[obj.id].name)
-      .replace("{{contentPurposeDetail}}", apiData[obj.id].purpose)
-      .replace("{{contentNumberDetail}}", apiData[obj.id].numbers)
-      .replace("{{contentItemDetail}}", apiData[obj.id].items)
-      .replace("{{contentRulesDetail}}", apiData[obj.id].rules)
-      .replace("{{contentSuggestDetail}}", "暫無");
+  var gameContentOutput = gameContent
+    .replace("{{contentTitleDetail}}", apiData[obj.id].name)
+    .replace("{{contentPurposeDetail}}", apiData[obj.id].purpose)
+    .replace("{{contentNumberDetail}}", apiData[obj.id].numbers)
+    .replace("{{contentItemDetail}}", apiData[obj.id].items)
+    .replace("{{contentRulesDetail}}", apiData[obj.id].rules)
+    .replace("{{contentSuggestDetail}}", "暫無");
 
 
 
@@ -167,7 +191,7 @@ $('.nav').click(function () {
   // }
 });
 
-function myFunction(obj){
+function myFunction(obj) {
 
   $(".contentDetail").remove();
 }
