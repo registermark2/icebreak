@@ -27,10 +27,6 @@ function createList() {
     });
 }
 
-createList();
-
-
-
 
 function updateGameDetial(obj) {
     // console.log(obj);
@@ -43,3 +39,40 @@ function updateGameDetial(obj) {
         $('#gameRule').text(data[obj.id].rules);
     })
 }
+
+
+
+
+
+// 第一次刷新
+createList();
+
+
+function switchTest(obj){
+    // console.log($(obj).is(':checked'));
+    if($(obj).is(':checked')==true){
+        console.log("開");
+    }
+}
+
+
+
+// $("input")
+
+
+// $(".form-switch").bootstrapSwitch({
+//     onSwitchChange: function (e, state) {
+//         console.log(state);
+//     }
+// });
+
+
+// handleChange: function (event, state) {
+//     console.log(state);
+//     this.setState({storyStatus: state});
+// },
+
+// $('#mySwitch input').bootstrapSwitch({
+//     onText: 'On',
+//     offText: 'Off'
+// });

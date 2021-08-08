@@ -13,6 +13,8 @@
     integrity='sha512-8LIFSzvvyanCM8TSA5f9S++dBWOljWRxuqWA8EKXWlcj0N8yBTXVIJROTJrb6FCVMTR2PtfLh6GexmIz5CgSqA=='
     crossorigin='anonymous'></script>
 
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.4/js/bootstrap-switch.min.js"></script> -->
+
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js'
     integrity='sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=='
@@ -49,11 +51,15 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">篩選</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-
+          <!-- 篩選 靜態 -->
+          <div class="form-check form-switch">
+            <input id="test1" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" onclick="switchTest(this)">
+            <label class="form-check-label" for="flexSwitchCheckChecked">靜態活動</label>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -70,7 +76,9 @@
     <div class="modal-dialog modal-fullscreen-sm-down modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel"><h1><span id="gameTitle" class="badge bg-primary">名字心臟病</span></h1></h5>
+          <h5 class="modal-title" id="staticBackdropLabel">
+            <h1><span id="gameTitle" class="badge bg-primary">名字心臟病</span></h1>
+          </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -78,18 +86,24 @@
           <div class="container">
             <div class="row">
               <div class="col-3">
-                <h3><span class="badge bg-secondary">目標：</span><h3>
+                <h3><span class="badge bg-secondary">目標：</span>
+                  <h3>
               </div>
               <div class="col-9">
-                <h3><p id="gamePurpose">快速熟悉彼此名字</p></h3>
+                <h3>
+                  <p id="gamePurpose">快速熟悉彼此名字</p>
+                </h3>
               </div>
             </div>
             <div class="row">
               <div class="col-3">
-                <h3><span class="badge bg-secondary">人數：</span><h3>
+                <h3><span class="badge bg-secondary">人數：</span>
+                  <h3>
               </div>
               <div class="col-9">
-                <h3><p id="gameNumber">5-7人</p></h3>
+                <h3>
+                  <p id="gameNumber">5-7人</p>
+                </h3>
               </div>
             </div>
             <div class="row">
@@ -97,7 +111,9 @@
                 <h3><span class="badge bg-secondary">道具：</span></h3>
               </div>
               <div class="col-9">
-                <h3><p id="gameItem">撲克牌大小的白紙(人數*5=數量)，5張特殊鬼牌(可寫活動名稱)，數支彩色筆(同人數)</p></h3>
+                <h3>
+                  <p id="gameItem">撲克牌大小的白紙(人數*5=數量)，5張特殊鬼牌(可寫活動名稱)，數支彩色筆(同人數)</p>
+                </h3>
               </div>
             </div>
             <div class="row">
@@ -105,7 +121,13 @@
                 <h3><span class="badge bg-secondary">規則：</span></h3>
               </div>
               <div class="col-9">
-                <h3><p id="gameRule">每人手上5張紙，紙上寫上自己名字(直式)</p><p>玩法如同心臟病，輪流喊自己名字</p><p>只要喊出名字與翻出名字相同，就要拍牌</p><p>特殊鬼牌每個人無條件拍牌</p><p>手牌最先沒有即為贏家</p></h3>
+                <h3>
+                  <p id="gameRule">每人手上5張紙，紙上寫上自己名字(直式)</p>
+                  <p>玩法如同心臟病，輪流喊自己名字</p>
+                  <p>只要喊出名字與翻出名字相同，就要拍牌</p>
+                  <p>特殊鬼牌每個人無條件拍牌</p>
+                  <p>手牌最先沒有即為贏家</p>
+                </h3>
               </div>
             </div>
           </div>
@@ -119,6 +141,16 @@
     </div>
   </div>
 
+
+  <!-- <div class="margin-bottom-10">
+    <input type="checkbox" class="make-switch" id="price_check" name="pricing" data-on-color="primary"
+      data-off-color="info" value="true">
+  </div> -->
+  <!-- Checked switch -->
+  
+  <!-- <div class="switch" id="mySwitch">
+    <input type="checkbox" checked data-on-text="YES" data-off-text="NO" />
+  </div> -->
 
   <script src="./scripts.js"></script>
 </body>
