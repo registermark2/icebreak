@@ -1,0 +1,101 @@
+* {
+  /* border: solid 1px black; */
+  position: relative;
+  font-family: "微軟正黑體";
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #F8E3E3;
+}
+
+#app {
+  /* max-width: 00px; */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav {
+  height: 160px;
+  background-color: #FFAAA7;
+}
+
+.title {
+  position: absolute;
+  font-size: 80px;
+  display: inline-block;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 40px;
+}
+
+.option {
+  width: 100px;
+  height: 80px;
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.opt {
+  position: absolute;
+  width: 100%;
+  height: 21px;
+  border-radius: 40px;
+  background-color: #FFD3B4;
+}
+
+.opt1 {
+  transform: translateY(150%);
+}
+
+.opt3 {
+  transform: translateY(300%);
+}
+
+/* .content{
+  background-color: #F8E3E3;
+  width: 100%;
+  height: 1000px;
+  position: absolute;
+}  */
+
+.list {
+  height: 300px;
+  border-radius: 40px;
+  background-color: #fff;
+  margin: 40px;
+}
+
+.listPic {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 40px;
+  border-radius: 40px;
+  /* background-color: rgb(164, 121, 121); */
+}
+
+.listName {
+  width: 300px;
+  height: 80px;
+  position: absolute;
+  left: 350px;
+  top: 40px;
+  /* background-color: rgb(211, 109, 20); */
+  font-size: 50px;
+  text-align: center;
+}
+
+.listContent{
+  width: 450px;
+  height: 120px;
+  position: absolute;
+  left: 350px;
+  top: 140px;
+  /* background-color: rgb(72, 89, 182); */
+}

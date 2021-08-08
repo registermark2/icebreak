@@ -1,49 +1,126 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
-  <title>ICE BREAK</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.css'
+    integrity='sha512-H+HWO9L7oLHex/9VCN9kyGaYp96jiJUwadh87k24XzAe+7eLmCdsdaEOfeZTaFmdZ0y4SDdq0eLh8+1OMJQ50g=='
+    crossorigin='anonymous' />
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.js'
+    integrity='sha512-8LIFSzvvyanCM8TSA5f9S++dBWOljWRxuqWA8EKXWlcj0N8yBTXVIJROTJrb6FCVMTR2PtfLh6GexmIz5CgSqA=='
+    crossorigin='anonymous'></script>
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js'
+    integrity='sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=='
+    crossorigin='anonymous'></script>
+
+
   <link rel="stylesheet" href="./style.css">
-  <style type="text/css">
-    @import url("http://fonts.googleapis.com/earlyaccess/cwtexhei.css");
-  </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <title>ICE BREAK</title>
   <link rel="shortcut icon" href="./icon/jigsaw.png" type="image/x-icon">
 </head>
+
 <body>
-<!-- partial:index.partial.html -->
-<div id="app">
-  <div class="nav">
-    <div class="title" onclick='del_test()'>破冰遊戲</div>
-    <div class="option">
-      <div class="opt opt1"></div>
-      <div class="opt opt2"></div>
-      <div class="opt opt3"></div>
+  <nav class="navbar fixed-top navbar-light" style="background-color: #FFAAA8;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">破冰遊戲</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </div>
-  </div>
+  </nav>
+
   <div class="content">
-    
-  <!-- <div class="fixTest"></div> -->
-  <!-- <div class='del_btn'>X</div> -->
-  <div class="optionContent">
-    <div class="bt">
-      <div class="btTitle btTitle1">合作</div>
-      <div id='bt1' class='btContent btContent1 btContentClose' onclick='bt1Switch(this)'>
-        <div class="btCircle btCircle1 btCircleClose"></div>
-        <div class="btStatus btStatus1 btStatusClose">關</div>
-      </div>
+    <div id="listData" class="row">
+      <!-- list -->
     </div>
-    <div class="bt">
-      <div class="btTitle btTitle2">競爭</div>
-      <div id='bt2' class='btContent btContent2 btContentClose' onclick='bt2Swirch(this)'>
-        <div class="btCircle btCircle2 btCircleClose"></div>
-        <div class="btStatus btStatus2 btStatusClose">關</div>
+  </div>
+
+
+  <!-- Modal -->
+  <!-- option Button -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        </div>
       </div>
     </div>
   </div>
-  
-</div>
-<!-- partial -->
+
+
+  <!-- list game content modal -->
+  <div class="modal fade" id="listGame" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen-sm-down modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel"><h1><span id="gameTitle" class="badge bg-primary">名字心臟病</span></h1></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- <div class="gameTitle">名字心臟病</div> -->
+          <div class="container">
+            <div class="row">
+              <div class="col-3">
+                <h3><span class="badge bg-secondary">目標：</span><h3>
+              </div>
+              <div class="col-9">
+                <h3><p id="gamePurpose">快速熟悉彼此名字</p></h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <h3><span class="badge bg-secondary">人數：</span><h3>
+              </div>
+              <div class="col-9">
+                <h3><p id="gameNumber">5-7人</p></h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <h3><span class="badge bg-secondary">道具：</span></h3>
+              </div>
+              <div class="col-9">
+                <h3><p id="gameItem">撲克牌大小的白紙(人數*5=數量)，5張特殊鬼牌(可寫活動名稱)，數支彩色筆(同人數)</p></h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <h3><span class="badge bg-secondary">規則：</span></h3>
+              </div>
+              <div class="col-9">
+                <h3><p id="gameRule">每人手上5張紙，紙上寫上自己名字(直式)</p><p>玩法如同心臟病，輪流喊自己名字</p><p>只要喊出名字與翻出名字相同，就要拍牌</p><p>特殊鬼牌每個人無條件拍牌</p><p>手牌最先沒有即為贏家</p></h3>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <script src="./scripts.js"></script>
 </body>
+
 </html>
