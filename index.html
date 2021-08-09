@@ -48,7 +48,7 @@
   <!-- option Button -->
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-fullscreen-sm-down">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="staticBackdropLabel">篩選</h5>
@@ -56,14 +56,44 @@
         </div>
         <div class="modal-body">
           <!-- 篩選 靜態 -->
-          <div class="form-check form-switch">
-            <input id="test1" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" onclick="switchTest(this)">
-            <label class="form-check-label" for="flexSwitchCheckChecked">靜態活動</label>
+          <div class="container">
+            <div class="row g-2">
+              <div class="col-6">
+                <div class="d-grid gap-2">
+                  <button id="myButton" class="btn btn btn-outline-primary" type="button" onclick="switchButton(this)" value="靜態">靜態</button>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="d-grid gap-2">
+                  <button class="btn btn btn-outline-primary" type="button" onclick="switchButton(this)" value="道具" >道具</button>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="d-grid gap-2">
+                  <button class="btn btn btn-outline-primary" type="button" onclick="switchButton(this)" value="反思">反思</button>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="d-grid gap-2">
+                  <button class="btn btn btn-outline-primary" type="button" onclick="switchButton(this)" value="攻略">攻略</button>
+                </div>
+              </div>
+
+            </div>
           </div>
+
         </div>
+
+
+
+
+
+
+
+
+        <!-- footer -->
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
         </div>
       </div>
     </div>
@@ -147,7 +177,7 @@
       data-off-color="info" value="true">
   </div> -->
   <!-- Checked switch -->
-  
+
   <!-- <div class="switch" id="mySwitch">
     <input type="checkbox" checked data-on-text="YES" data-off-text="NO" />
   </div> -->

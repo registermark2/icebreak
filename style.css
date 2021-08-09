@@ -17,3 +17,7 @@ img {
 .card{
   margin: 5px;
 }
+
+input{
+  width: 20%;
+}
