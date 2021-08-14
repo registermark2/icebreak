@@ -4,7 +4,7 @@
 
 
 .content{
-  margin-top:60px
+  margin-top:70px
 }
 
 img {
@@ -20,4 +20,7 @@ img {
 
 input{
   width: 20%;
+}
+.navbar-brand{
+  font-size: 30px;
 }

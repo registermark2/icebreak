@@ -1,10 +1,10 @@
 
 var listTemplate =
-    "<div class='col-sm-4'>" +
+    "<div class='col-sm-6 col-md-3'>" +
     "<div id={{gameID}} class='card' data-bs-toggle='modal' data-bs-target='#listGame' onclick='updateGameDetial(this)'>" +
     "<img src={{linkPic}} class='card-img-top'>" +
     "<div class='card-body' >" +
-    "<h5 class='card-title'>{{gameName}}</h5>" +
+    "<h2 class='card-title'>{{gameName}}</h2>" +
     "<p class='card-text'>{{gamePurpose}}</p>" +
     "</div>" +
     "</div>" +
